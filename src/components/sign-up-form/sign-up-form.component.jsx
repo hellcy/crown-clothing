@@ -25,7 +25,7 @@ const SignUpForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert("passwords do not match");
       return;
     }
@@ -35,7 +35,7 @@ const SignUpForm = () => {
         email,
         password
       );
-      console.log(user);
+
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -73,7 +73,6 @@ const SignUpForm = () => {
           name="email"
           value={email}
         />
-
         <FormInput
           label="Password"
           type="password"
@@ -82,7 +81,6 @@ const SignUpForm = () => {
           name="password"
           value={password}
         />
-
         <FormInput
           label="Confirm Password"
           type="password"
